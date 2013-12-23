@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 $:.unshift("/Library/RubyMotion/lib")
-require 'motion/project'
+require 'motion/project/template/ios'
 require 'rubygems'
 require 'bundler'
 Bundler.require(:default)
@@ -15,4 +15,7 @@ require 'motion_model/fmdb'
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'sqlite3_sample_app'
+  app.pods do
+    dependency 'FMDB'
+  end
 end
